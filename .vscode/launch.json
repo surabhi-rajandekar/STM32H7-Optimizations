@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug STM32H7 with OpenOCD",
+            "cwd": "${workspaceFolder}",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "external",
+            "executable": "build/Debug/STM32_Optimizations.elf",
+            "gdbPath": "/Applications/ArmGNUToolchain/13.3.rel1/arm-none-eabi/bin/arm-none-eabi-gdb",
+            "device": "STM32H743ZI2",
+            "interface": "swd",
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32h7x.cfg"
+            ],
+            "gdbTarget": "localhost:3333",
+            "runToEntryPoint": "main",
+            "postLaunchCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset init"
+            ],
+            "showDevDebugOutput": "raw"
+        }
+    ]
+}

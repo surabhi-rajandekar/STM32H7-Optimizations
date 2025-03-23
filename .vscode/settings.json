@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "stm32h7xx.h": "c",
+        "drv_crc.h": "c"
+    },
+    "cortex-debug.variableUseNaturalFormat": false
+}
